@@ -4,16 +4,20 @@ public class trial11 {
 
 	public static void main(String[] args) {
 		int randomsiffra = 252; 
-		int prim = 0;
+		String prim = "";
 		
 		for (int i = 2; i < randomsiffra;) {
-			if (randomsiffra / i == (int) randomsiffra / i) {
+			System.out.println((double) randomsiffra / i + " : " + (int) randomsiffra / i);
+			if ((double) randomsiffra / i == (int) randomsiffra / i) {
 				randomsiffra = randomsiffra / i;
-			}else i = i + 1;
+				prim += " " + i; 
+			} else 
+				i++;
+			
 			
 			System.out.println(randomsiffra);
-		}
-		 
+		}  
+		System.out.println( "" + prim + " " + randomsiffra);
 		
 	
 		
