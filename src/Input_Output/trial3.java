@@ -8,17 +8,11 @@ public class trial3 {
 		
 		System.out.println("Enter nr: ");		
 		int nr1 = inputScanner.nextInt();
-		
-		System.out.println(nr1 * 1 );
-		System.out.println(nr1 * 2 );
-		System.out.println(nr1 * 3 );
-		System.out.println(nr1 * 4 );
-		System.out.println(nr1 * 5 );
-		System.out.println(nr1 * 6 );
-		System.out.println(nr1 * 7 );
-		System.out.println(nr1 * 8 );
-		System.out.println(nr1 * 9 );
-		System.out.println(nr1 * 10 );
+        
+		for (int i = 1 ; i <= 10; i++){
+			System.out.println("" + nr1 +" * "+ i + " = " + nr1 * i);
+			
+		}
 
 	}
 
