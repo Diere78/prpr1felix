@@ -11,8 +11,8 @@ public class trial6 {
 		System.out.println("Enter Width: ");		
 		double W = inputScanner.nextDouble();
 		
-		System.out.println("Area is " + 2*(H + W));
-		System.out.println("Perimeter is " + (H * W));
+		System.out.println("Perimeter is " + 2*(H + W));
+		System.out.println("Area is " + (H * W));
 		
 
 	}
