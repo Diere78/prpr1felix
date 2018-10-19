@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Trial9 {
 
 	public static void main(String[] args) {
-		Scanner inputScanner = new Scanner(System.in); 
-
+		Scanner inputScanner = new Scanner(System.in);
 
 		System.out.print("Enter a binary number using 3 digits: ");
 
@@ -16,23 +15,21 @@ public class Trial9 {
 
 		int binB = inputScanner.nextInt();
 
+		if (binA == 10 && binB == 11) {
+			System.out.println(binA * binB);
 
-		
-		if (binA == 10 && binB == 11){
+		} else if (binA == 11 && binB == 10) {
 			System.out.println(binA * binB);
-			
-		}else if (binA == 11 && binB == 10){
+
+		} else if (binA == 10 && binB == 10) {
 			System.out.println(binA * binB);
-			
-		}else if (binA == 10 && binB == 10){
+
+		} else if (binA == 1 || binB == 1) {
 			System.out.println(binA * binB);
-			
-		}else if (binA == 1 || binB == 1){
-			System.out.println(binA * binB);
-			
-		}else {
+
+		} else {
 			System.out.println("Error Only Three Digits");
-			
+
 		}
 
 	}

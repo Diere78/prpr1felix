@@ -83,14 +83,14 @@ public class trial8 {
 			System.out.println("Format not supported. Only three digits. " + "Max Bin is 111");
 			System.exit(0);
 		}
-		if (binA == 111 || binB == 111 ){
-		    System.out.println("Format not supported. Only three digits. " + "Max Bin is 111");
-		    System.exit(0);
-       
+		if (binA == 111 || binB == 111) {
+			System.out.println("Format not supported. Only three digits. " + "Max Bin is 111");
+			System.exit(0);
+
 		}
- 
+
 		System.out.println(" " + bin4C + bin2C + bin1C);
-		
+
 	}
 
 }
