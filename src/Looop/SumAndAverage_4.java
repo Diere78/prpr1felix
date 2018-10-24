@@ -1,4 +1,4 @@
-package Input_Output;
+package Looop;
 
 import java.util.Scanner;
 
