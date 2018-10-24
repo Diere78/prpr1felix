@@ -16,7 +16,7 @@ public class SumAndAverage_2 {
 			sum += j;
 			System.out.println(sum);
 			j++;
-		}while (j <=nr);
+		} while (j <= nr);
 		System.out.println("Average = " + sum + " / " + nr + " = " + (double) sum / (double) nr);
 
 	}
