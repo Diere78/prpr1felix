@@ -14,7 +14,7 @@ public class ArrayTrial2 {
 		System.out.println("Write another number from 0 to 9, excluding decimals, to add with the old one: ");
 		int o = scanner.nextInt();		
 		
-		System.out.println("step " + i + ": " + array[i] + " + step " +  o + ": " + array[o] + " = " +( array[i] + array[o]));
+		System.out.println("step " + i + ": " + array[i] + "; + step " +  o + ": " + array[o] + "; = " +( array[i] + array[o]));
 		
 	}
 
