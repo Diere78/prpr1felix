@@ -23,7 +23,7 @@ public class CountVowels {
 		char[] vowels = { 'e', 'u', 'i', 'o', 'a', 'å', 'ä', 'ö', 'y' };
 
 		int sum = 0;
-		for (int i = 0; i <= inputs.length(); i++) {
+		for (int i = 0; i < inputs.length(); i++) {
 			for (int j = 0; j < vowels.length; j++){
 				
 				if (("" + inputs.charAt(i)).equalsIgnoreCase("" + vowels[j])){
