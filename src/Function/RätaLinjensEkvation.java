@@ -5,20 +5,28 @@ import java.util.Scanner;
 public class RätaLinjensEkvation {
 
 	public static void main(String[] args) {
-		Scanner enter = new Scanner(System.in);
-		System.out.println("y = kx + m");
-		System.out.println("What value do you want to find (singular): ");
-		char find = enter.nextLine().charAt(0);
-		if (find == 'y') {
-			yValue(inputKXM());
-		} else if (find == 'x') {
-			xValue(inputYKM());
-		} else if (find == 'm') {
-			mValue(inputYKX());
-		} else if (find == 'k') {
-			kValue(inputYX());
-		} else
-			System.out.println("Not an option try again");
+			Scanner enter = new Scanner(System.in);
+			System.out.println("y = kx + m");
+			System.out.println("What value do you want to find (singular): ");
+			char find = enter.nextLine().charAt(0);
+			while (true) {
+			if (find == 'y') {
+				yValue(inputKXM());
+				break;
+			} else if (find == 'x') {
+				xValue(inputYKM());
+				break;
+			} else if (find == 'm') {
+				mValue(inputYKX());
+				break;
+			} else if (find == 'k') {
+				kValue(inputYX());
+				break;
+				
+			} else
+				System.out.println("Not an option try again");
+				find = enter.nextLine().charAt(0);
+		}
 	}
 
 	public static double[] inputKXM() {
@@ -79,7 +87,7 @@ public class RätaLinjensEkvation {
 		double k = (delta[2] - delta[0]) / (delta[3] - delta[1]);
 		System.out.println("k " + "= " + delta[2] + " - " + delta[0] + " / " + delta[3] + " - " + delta[1] + " = " + k);
 		m = delta[0] - k * delta[1];
-		System.out.println("Function is: y = " + k + " x " + "+ " + m);
+		System.out.println("Function is: y = " + k + "x " + "+ " + m);
 
 	}
 
@@ -91,9 +99,9 @@ public class RätaLinjensEkvation {
 	}
 
 	public static void xValue(double[] ykm) {
+		double x = (ykm[0] - ykm[2]) / ykm[1];
 		System.out.println("" + ykm[0] + " = " + ykm[1] + "x " + " + " + ykm[2]);
-		System.out.println("" + "x" + " = " + " (" + ykm[0] + " - " + ykm[1] + ") " + "/ " + ykm[2] + " = "
-				+ ((ykm[0] - ykm[1]) / ykm[2]));
+		System.out.println("" + "x" + " = " + x);
 		System.out.println(" The function: " + " y " + "= " + ykm[1] + "x " + "+ " + ykm[2]);
 	}
 
