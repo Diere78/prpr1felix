@@ -20,7 +20,8 @@ public class CountVowels {
 	}
 
 	/**
-	 * Function that allows user to enter a string. 
+	 * Function that allows user to enter a string.
+	 * 
 	 * @return
 	 */
 	public static String input() {
@@ -31,10 +32,12 @@ public class CountVowels {
 
 		return inputs;
 	}
-/**
- * Function that calculates and prints the sum of all vowels
- * @param inputs
- */
+
+	/**
+	 * Function that calculates and prints the sum of all vowels
+	 * 
+	 * @param inputs
+	 */
 	public static void countVowels(String inputs) {
 		/*
 		 * Creates an array with all swedish vowels
@@ -43,7 +46,8 @@ public class CountVowels {
 
 		int sum = 0;
 		/*
-		 * A Loop that  goes through each entered character in the previous string and checks if it is a vowel
+		 * A Loop that goes through each entered character in the previous
+		 * string and checks if it is a vowel
 		 */
 		for (int i = 0; i < inputs.length(); i++) {
 			for (int j = 0; j < vowels.length; j++) {

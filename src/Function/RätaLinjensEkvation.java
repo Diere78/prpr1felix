@@ -2,14 +2,27 @@ package Function;
 
 import java.util.Scanner;
 
+/**
+ * class for finding different values in the y = kx+m formula
+ * 
+ * @author felix.ortlund
+ *
+ */
+
 public class RätaLinjensEkvation {
 
 	public static void main(String[] args) {
-			Scanner enter = new Scanner(System.in);
-			System.out.println("y = kx + m");
-			System.out.println("What value do you want to find (singular): ");
-			char find = enter.nextLine().charAt(0);
-			while (true) {
+		Scanner enter = new Scanner(System.in);
+		System.out.println("y = kx + m");
+		System.out.println("What value do you want to find (singular): ");
+		char find = enter.nextLine().charAt(0);
+		/*
+		 * Allows you to try again if you don't enter an allowed character
+		 */
+		while (true) {
+			/*
+			 * inputs for which part of the equation you want to find
+			 */
 			if (find == 'y') {
 				yValue(inputKXM());
 				break;
@@ -22,13 +35,19 @@ public class RätaLinjensEkvation {
 			} else if (find == 'k') {
 				kValue(inputYX());
 				break;
-				
+
 			} else
 				System.out.println("Not an option try again");
-				find = enter.nextLine().charAt(0);
+			find = enter.nextLine().charAt(0);
 		}
 	}
 
+	/**
+	 * Functions for entering the numbers you have and putting the into an
+	 * array.
+	 * 
+	 * @return
+	 */
 	public static double[] inputKXM() {
 		double[] kxm = new double[3];
 		Scanner scanner = new Scanner(System.in);
@@ -82,6 +101,12 @@ public class RätaLinjensEkvation {
 		return delta;
 	}
 
+	/**
+	 * functions for calculating the different values in the formula and prints
+	 * the equation in the end
+	 * 
+	 * @param delta
+	 */
 	public static void kValue(double[] delta) {
 		double m = 0;
 		double k = (delta[2] - delta[0]) / (delta[3] - delta[1]);

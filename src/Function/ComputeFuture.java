@@ -21,6 +21,7 @@ public class ComputeFuture {
 
 	/**
 	 * Functions that allows you to enter values and converts them to an array
+	 * 
 	 * @return
 	 */
 	public static double[] input() {
@@ -35,17 +36,19 @@ public class ComputeFuture {
 		return array;
 
 	}
-/**
- * Function for calculating the numbers
- * @param array
- */
+
+	/**
+	 * Function for calculating the numbers
+	 * 
+	 * @param array
+	 */
 	public static void future(double[] array) {
 		/*
 		 * Converts a percentage number to a decimal value.
 		 */
 		array[1] = array[1] / 100 + 1;
 		/*
-		 * Shows the increase each hypothetical year 
+		 * Shows the increase each hypothetical year
 		 */
 		for (int i = 1; i <= array[2]; i++) {
 			double totItrest = (Math.pow(array[1], i));
