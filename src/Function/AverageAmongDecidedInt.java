@@ -10,10 +10,11 @@ import java.util.Scanner;
  */
 
 public class AverageAmongDecidedInt {
-/**hg
- * Executes the program.
- * @param args
- */
+	/**
+	 * Executes the program.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		System.out.println("Average among decided integers");
 		averageAmongDecided(input());
@@ -46,6 +47,7 @@ public class AverageAmongDecidedInt {
 
 		return inputs;
 	}
+
 	/**
 	 * Sums up the values that you previously entered into the array. i
 	 * represents the steps in the array.
@@ -59,8 +61,7 @@ public class AverageAmongDecidedInt {
 			sum += inputs[i];
 		}
 		/*
-		 * Divides the sum by the length of the array and printing the
-		 * average.
+		 * Divides the sum by the length of the array and printing the average.
 		 */
 		System.out
 				.println("Average is: " + sum + " / " + inputs.length + " = " + (double) sum / (double) inputs.length);

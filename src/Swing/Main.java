@@ -113,7 +113,6 @@ public class Main extends JFrame implements KeyListener {
 		}
 	}
 
-
 	public void keyReleased(KeyEvent r) {
 		if (r.getKeyCode() == KeyEvent.VK_R) {
 			blinkR();
