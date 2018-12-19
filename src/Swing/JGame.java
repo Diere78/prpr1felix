@@ -18,7 +18,7 @@ import javax.swing.JLabel;
  *
  */
 
-public class JGame extends JFrame implements KeyListener {
+public class JGame extends JFrame {
 	/*
 	 * Creates global variables that are used in multiple functions.
 	 */
@@ -46,32 +46,37 @@ public class JGame extends JFrame implements KeyListener {
 			"<html> <style> p { font-size: 60;}</style> <body> <p>Restart</p></body></html>");
 
 	/**
-	 * A function for the frame for the game.
+	 * A function for the main frame that is used in the game.
 	 */
 
 	public JGame() {
 		/*
-		 * Turns off the program when you exit.
+		 * Turns off the program when you close the application.
 		 */
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		/*
-		 * Creates the structure of the frame.
+		 * Creates the structure of the frame, for example, how wide it should
+		 * be or how it is decorated.
 		 */
 		this.setSize(toolkit.getScreenSize().width, toolkit.getScreenSize().height);
 		this.setUndecorated(true);
 		this.setVisible(true);
+		/*
+		 * Customizes the frame.
+		 */
 		game = this.getContentPane();
 		game.setLayout(null);
 		game.setBackground(black);
 
 		/*
-		 * Connects the "action" function to the game panel.
+		 * Connects the "action" function to the game panel (the frame).
 		 */
 		actions(game);
 
 		/*
-		 * Creates the text label that comes up when you lose.
+		 * Creates the text label that comes up when you lose (when the HP
+		 * variable is 0).
 		 */
 		loss = new JLabel(
 				"<html> <style> p { font-size: 50;}</style> <body> <p>You've been defeated by rakis, disgraceful.</p></body></html>");
@@ -79,7 +84,8 @@ public class JGame extends JFrame implements KeyListener {
 		loss.setForeground(white);
 
 		/*
-		 * Creates the text label that comes up when you win.
+		 * Creates the text label that comes up when you win (when the rakis
+		 * variable is 0).
 		 */
 		win = new JLabel(
 				"<html> <style> p { font-size: 50;}</style> <body> <p>You've defeated Rakis! Great jobb!</p></body></html>");
@@ -87,7 +93,8 @@ public class JGame extends JFrame implements KeyListener {
 		win.setForeground(white);
 
 		/*
-		 * Creates the text label that comes up when you draw.
+		 * Creates the text label that comes up when you draw (When both
+		 * variables are 0).
 		 */
 		draw = new JLabel(
 				"<html> <style> p { font-size: 50;}</style> <body> <p>You sacrificed your life to deafeat Rakis, A noble death.</p></body></html>");
@@ -105,7 +112,7 @@ public class JGame extends JFrame implements KeyListener {
 		game.repaint();
 
 		/*
-		 * Shows the displays the HP variable for the player.
+		 * Displays the HP variable for the user.
 		 */
 		showHP = new JLabel();
 		showHP.setFont(times);
@@ -115,7 +122,7 @@ public class JGame extends JFrame implements KeyListener {
 		game.repaint();
 
 		/*
-		 * Shows the opponents HP variable
+		 * Shows the rakisHP variable.
 		 */
 		showRakis = new JLabel();
 		showRakis.setFont(times);
@@ -127,7 +134,7 @@ public class JGame extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * A function for game actions to be created.
+	 * A function for game actions to be created example buttons.
 	 * 
 	 * @param game
 	 */
@@ -146,7 +153,7 @@ public class JGame extends JFrame implements KeyListener {
 		game.repaint();
 
 		/*
-		 * Creates the structure for the button labeled "run"
+		 * Creates the structure for the button labeled "run".
 		 */
 		run.setBounds(500, 750, run.getPreferredSize().width, run.getPreferredSize().height);
 		run.setBackground(red);
@@ -155,7 +162,7 @@ public class JGame extends JFrame implements KeyListener {
 		game.repaint();
 
 		/*
-		 * Creates the structure for the button labeled "fight"
+		 * Creates the structure for the button labeled "fight".
 		 */
 		fight.setBounds(1000, 750, fight.getPreferredSize().width, fight.getPreferredSize().height);
 		fight.setBackground(red);
@@ -164,7 +171,7 @@ public class JGame extends JFrame implements KeyListener {
 		game.repaint();
 
 		/*
-		 * Creates the structure for the button labeled "punch"
+		 * Creates the structure for the button labeled "punch".
 		 */
 		punch.setBounds(500, 750, punch.getPreferredSize().width, punch.getPreferredSize().height);
 		punch.setBackground(red);
@@ -172,7 +179,7 @@ public class JGame extends JFrame implements KeyListener {
 		punch.addActionListener(event -> punchAction());
 
 		/*
-		 * Creates the structure for the button labeled "kick"
+		 * Creates the structure for the button labeled "kick".
 		 */
 		kick.setBounds(1000, 750, kick.getPreferredSize().width, kick.getPreferredSize().height);
 		kick.setBackground(red);
@@ -180,7 +187,7 @@ public class JGame extends JFrame implements KeyListener {
 		kick.addActionListener(event -> kickAction());
 
 		/*
-		 * Creates the structure for the button labeled "start"
+		 * Creates the structure for the button labeled "start".
 		 */
 		start.setBounds((toolkit.getScreenSize().width / 2) - 250, toolkit.getScreenSize().height / 2 - 250, 500, 500);
 		start.setBackground(red);
@@ -189,7 +196,7 @@ public class JGame extends JFrame implements KeyListener {
 		start.addActionListener(event -> set());
 
 		/*
-		 * Creates the structure for the button labeled "restart"
+		 * Creates the structure for the button labeled "restart".
 		 */
 		restart.setBounds(750, 750, restart.getPreferredSize().width, restart.getPreferredSize().height);
 		restart.setBackground(red);
@@ -200,7 +207,7 @@ public class JGame extends JFrame implements KeyListener {
 
 	/**
 	 * Creates the function connected to the closeButton. The function turns the
-	 * program off
+	 * program off and closes the application.
 	 */
 	public void closeButtonPressed() {
 		System.exit(0);
@@ -220,8 +227,8 @@ public class JGame extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * Function for the fightbutton. It adds different actions and starts the
-	 * battling.
+	 * Function for the fightbutton. It adds different actions, adds changes the
+	 * text and starts the "battling".
 	 */
 	public void fightButton() {
 		text.setText(
@@ -234,11 +241,12 @@ public class JGame extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * Creates the action for the punch button.
+	 * Creates the action for the punch button that counts as a kind of turn,
+	 * and lowers both HP variables.
 	 */
 	public void punchAction() {
 		/*
-		 * Different outcomes depending on the RakisHP.
+		 * Different outcomes depending on the RakisHP variable.
 		 */
 		if (rakis > 20) {
 			rakis -= 2;
@@ -268,11 +276,12 @@ public class JGame extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * Creates the action for the kick button.
+	 * Creates the action for the kick button that counts as a kind of turn, and
+	 * lowers both HP variables.
 	 */
 	public void kickAction() {
 		/*
-		 * Different outcomes depending on the RakisHP.
+		 * Different outcomes depending on the RakisHP variable.
 		 */
 		if (rakis > 20) {
 			text.setText(
@@ -343,7 +352,8 @@ public class JGame extends JFrame implements KeyListener {
 
 	/**
 	 * Function used for starting the "game" and resetting the game when it has
-	 * ended, recreating the original UI that comes up when pressing start.
+	 * ended, recreating the original UI that comes up when pressing start. Also
+	 * the same function used as the action listener for the "start" button.
 	 */
 	public void set() {
 		game.remove(loss);
@@ -375,27 +385,9 @@ public class JGame extends JFrame implements KeyListener {
 	public static void main(String[] args) {
 
 		/*
-		 * creates an object of this class that activates on startup 
+		 * creates an object of this class that activates on startup.
 		 */
-		 new JGame();
-
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+		new JGame();
 
 	}
 
